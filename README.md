@@ -1,9 +1,9 @@
-# SeisRay: A deep neural networking approach for seismic ray tracing
+# EikoNet: A deep neural networking approach for seismic ray tracing
 SeisRay is a software package that allows the training of a neural network that satisfies the Factored Eikonal 
 for the computation of travel-time from any source-reciever pair in a user defined velocity model.
 
 This approach is outline in greater detail in the publication: 
-Smith et al. (2020) - SeisRay:A deep neural networking approach for seismic ray tracing.
+Smith et al. (2020) - EikoNet:A deep neural networking approach for seismic ray tracing.
 
 Any additional question please contact: jsmith@caltech.edu
 
