@@ -5,17 +5,13 @@ for the computation of travel-time from any source-reciever pair in a user defin
 This approach is outline in greater detail in the publication: 
 Smith et al. (2020) - EikoNet:A deep neural networking approach for seismic ray tracing.
 
+Code will be updated in the next couple of days. Stay tunned .. 
+
 Any additional question please contact: jsmith@caltech.edu
 
-## Overview
-The package is being developed in Python and also currently being developed in Julia. The current stages of development are as follows:\
-Python - Fully operational.
-Julia  - Currently being scripted, look back soon.
-
-The software has yet to be built into a package format, we hope to complete this shortly.
-
 ## Notebooks
-The folder Notebook gives a series of Notebooks that allow you to run the code for a series of 3D problems as outlined in the publication.
+The folder Notebook gives a series of Notebooks that allow you to run the code for the 3D problems as outlined in the publication.
+
 The code is commented to allow the user to understand the processing procedures.
 
 ## Developers
