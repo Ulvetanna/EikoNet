@@ -5,7 +5,7 @@ for the computation of travel-time from any source-reciever pair in a user defin
 This approach is outline in greater detail in the publication: 
 Smith et al. (2020) - EikoNet:A deep neural networking approach for seismic ray tracing.
 
-Code will be updated in the next couple of days. Stay tunned .. 
+Code will be updated in the next couple of hours. Stay tunned .. 
 
 Any additional question please contact: jsmith@caltech.edu
 
