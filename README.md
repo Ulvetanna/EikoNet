@@ -1,5 +1,5 @@
 # EikoNet: A deep neural networking approach for seismic ray tracing
-SeisRay is a software package that allows the training of a neural network that satisfies the Factored Eikonal 
+EikoNet is a software package that allows the training of a neural network that satisfies the Factored Eikonal 
 for the computation of travel-time from any source-reciever pair in a user defined velocity model.
 
 This approach is outline in greater detail in the publication: 
@@ -8,8 +8,8 @@ Smith et al. (2020) - EikoNet:A deep neural networking approach for seismic ray 
 Any additional question please contact: jsmith@caltech.edu
 
 ## Overview
-The package is being developed in Python and also in a seperate Julia code. The current stages of development are as follows:\
-Python - Fully operational with dependices given by the conda .yml file
+The package is being developed in Python and also currently being developed in Julia. The current stages of development are as follows:\
+Python - Fully operational.
 Julia  - Currently being scripted, look back soon.
 
 The software has yet to be built into a package format, we hope to complete this shortly.
