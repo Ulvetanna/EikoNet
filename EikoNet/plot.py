@@ -116,7 +116,7 @@ def _plot_LossFunc(fig,model,RMS_TT,num_rows=4,row_plot=5,loss_ylim=[1e-5,1e-2])
 
 
 def Plotting(model,Xsrc,spacing=0.1,vrange=[4,6],loss_ylim=[1e-7,1e-2], compute_FD=True,fig_path=None,contours=True):
-    VelocityFunction = model.VelocityClass
+    VelocityFunction = model.Params['VelocityClass']
     plt.clf();plt.close('all')
 
     if compute_FD==True:
