@@ -381,42 +381,42 @@ class Model():
         del Xp,tau,dtau,T0,T1,T2,T3
         return Ypred
 
-    # def StationayPoints(self,Xsrc,Xrcv,Xpoints=None,numPoints=1e4):
-    #     ''' 
-    #         Supplying a series of Source-Reciever locations. 
+    def StationayPoints(self,Xsrc,Xrcv,Xpoints=None,numPoints=1e4):
+        ''' 
+            Supplying a series of Source-Reciever locations. 
 
-    #         This function returrns a the traveltime between the two and the stationary value.
-
-
-    #         #TO DO:
-    #             ADD LAT/LOT conversion of input points
+            This function returrns a the traveltime between the two and the stationary value.
 
 
-    #     '''
+            #TO DO:
+                ADD LAT/LOT conversion of input points
 
 
-    #     Xsrc = np.array(Xsrc)
-    #     Xrcv = np.array(Xrcv)
+        '''
 
-    #     if Xpoints == None:
-    #         XPs  = Variable(Tensor(np.random.rand(int(numPoints),3))*(Tensor(self.Params['VelocityClass'].xmax)-Tensor(self.Params['VelocityClass'].xmin))[None,:] + Tensor(self.Params['VelocityClass'].xmin)[None,:]).to(torch.device(self.Params['Device']))
-    #     else:
-    #         XPs = Variable(Tensor(Xpoints)).to(torch.device(self.Params['Device']))
 
-    #     XSs  = Variable(Tensor(np.ones((XPs.shape[0],3)))*(Xsrc[None,:])).to(torch.device(self.Params['Device']))
-    #     XRs  = Variable(Tensor(np.ones((XPs.shape[0],3)))*(Xrcv[None,:])).to(torch.device(self.Params['Device']))
-    #     XPs = XPs.float(); XSs = XSs.float(); XRs = XRs.float(); 
-    #     XPs.requires_grad_()
+        Xsrc = np.array(Xsrc)
+        Xrcv = np.array(Xrcv)
 
-    #     T_s2p = self.TravelTimes(torch.cat((XSs,XPs),dim=1))
-    #     T_r2p = self.TravelTimes(torch.cat((XRs,XPs),dim=1))
-    #     T_s2r = self.TravelTimes(torch.cat((XSs,XRs),dim=1)[0,:][None,:])
+        if Xpoints == None:
+            XPs  = Variable(Tensor(np.random.rand(int(numPoints),3))*(Tensor(self.Params['VelocityClass'].xmax)-Tensor(self.Params['VelocityClass'].xmin))[None,:] + Tensor(self.Params['VelocityClass'].xmin)[None,:]).to(torch.device(self.Params['Device']))
+        else:
+            XPs = Variable(Tensor(Xpoints)).to(torch.device(self.Params['Device']))
 
-    #     dP    = torch.autograd.grad(outputs=(T_s2p+T_r2p), inputs=XPs, grad_outputs=torch.ones((T_s2p+T_r2p).size()).to(torch.device(self.Params['Device'])), 
-    #                                   only_inputs=True,create_graph=False,retain_graph=False)[0]
-    #     dP    = torch.sum(abs(dP),dim=1)
+        XSs  = Variable(Tensor(np.ones((XPs.shape[0],3)))*(Xsrc[None,:])).to(torch.device(self.Params['Device']))
+        XRs  = Variable(Tensor(np.ones((XPs.shape[0],3)))*(Xrcv[None,:])).to(torch.device(self.Params['Device']))
+        XPs = XPs.float(); XSs = XSs.float(); XRs = XRs.float(); 
+        XPs.requires_grad_()
 
-    #     return T_s2r,torch.cat(((T_s2p+T_r2p)[:,None],dP[:,None]),dim=1).detach()
+        T_s2p = self.TravelTimes(torch.cat((XSs,XPs),dim=1))
+        T_r2p = self.TravelTimes(torch.cat((XRs,XPs),dim=1))
+        T_s2r = self.TravelTimes(torch.cat((XSs,XRs),dim=1)[0,:][None,:])
+
+        dP    = torch.autograd.grad(outputs=(T_s2p+T_r2p), inputs=XPs, grad_outputs=torch.ones((T_s2p+T_r2p).size()).to(torch.device(self.Params['Device'])), 
+                                      only_inputs=True,create_graph=False,retain_graph=False)[0]
+        dP    = torch.sum(abs(dP),dim=1)
+
+        return T_s2r,torch.cat(((T_s2p+T_r2p)[:,None],dP[:,None]),dim=1).detach()
 
 
 
