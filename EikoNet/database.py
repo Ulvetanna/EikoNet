@@ -243,8 +243,8 @@ class SCEC_CVMH:
 
         self.FileTemp = os.getcwd()
   
-    if type(self.cvm_host) == type(None):
-      print('Please specify a path to the CVM-H Fortran code')
+        if type(self.cvm_host) == type(None):
+          print('Please specify a path to the CVM-H Fortran code')
 
         self.phase    = phase
 
