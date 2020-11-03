@@ -2,15 +2,21 @@
 # EikoNet: A deep neural networking approach for seismic ray tracing
 ---
 
-![PyPI](https://img.shields.io/pypi/v/EikoNet?style=plastic)
-![Conda](https://img.shields.io/conda/v/ulvetanna/EikoNet?style=plastic)
-![PyPI - License](https://img.shields.io/pypi/l/EikoNet?style=plastic)
-![Conda](https://img.shields.io/conda/dn/ulvetanna/EikoNet?style=plastic)
+
 ![GitHub last commit](https://img.shields.io/github/last-commit/ulvetanna/EikoNet?style=plastic)
 ![GitHub stars](https://img.shields.io/github/stars/ulvetanna/EikoNet?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/ulvetanna/EikoNet?style=social)
 ![GitHub followers](https://img.shields.io/github/followers/ulvetanna?style=social)
 ![GitHub watchers](https://img.shields.io/github/watchers/ulvetanna/EikoNet?style=social)
+
+<!---
+Get this done soon
+![PyPI](https://img.shields.io/pypi/v/EikoNet?style=plastic)
+![Conda](https://img.shields.io/conda/v/ulvetanna/EikoNet?style=plastic)
+![PyPI - License](https://img.shields.io/pypi/l/EikoNet?style=plastic)
+![Conda](https://img.shields.io/conda/dn/ulvetanna/EikoNet?style=plastic)
+--->
+
 
 ***
 ## Introduction
